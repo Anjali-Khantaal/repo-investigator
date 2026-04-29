@@ -1,4 +1,4 @@
-# CodeOrbit
+# repo-investigator
 
 It is a codebase investigation agent with a web app.
 
