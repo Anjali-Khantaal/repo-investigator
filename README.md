@@ -366,7 +366,7 @@ repo-investigator/
 └── tests/
 ```
 
-## Notes For Reviewers
+## Points to Note
 
 - The app is local-first. It investigates repositories on the machine running the backend.
 - The default sample repo is intentionally small so the flow is easy to inspect.
