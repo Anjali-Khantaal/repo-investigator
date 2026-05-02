@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>repo-investigator answer snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7f9; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 42px; }
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    h1 { font-size: 30px; margin: 0; font-weight: 700; }
+    .pill { border: 1px solid #c8d1dc; border-radius: 999px; padding: 6px 12px; background: white; font-size: 14px; }
+    .card { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 22px; margin-bottom: 18px; box-shadow: 0 1px 2px rgba(20, 30, 40, 0.05); }
+    .label { font-size: 13px; color: #5d6b7a; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+    .answer { font-size: 20px; line-height: 1.55; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    code, pre { font-family: "SFMono-Regular", Consolas, monospace; }
+    pre { background: #111827; color: #f9fafb; padding: 16px; border-radius: 6px; overflow: hidden; font-size: 13px; line-height: 1.45; }
+    .meta { color: #5d6b7a; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top">
+      <h1>repo-investigator</h1>
+      <div class="pill">Mode: dspy · sample run</div>
+    </div>
+    <section class="card">
+      <div class="label">Question</div>
+      <div class="answer">Where is authentication handled?</div>
+    </section>
+    <section class="card">
+      <div class="label">Answer</div>
+      <div class="answer">
+        Authentication is handled in <code>app/auth.py</code>, specifically by the
+        <code>get_current_user</code> function, which uses <code>decode_token</code>
+        from <code>app/services/token_service.py</code> to process the bearer token.
+      </div>
+      <p class="meta">Run ID: c16ac7c10ed249ba8ce8fe5a63e7bbac</p>
+    </section>
+    <div class="grid">
+      <section class="card">
+        <div class="label">Citation</div>
+        <h2>app/auth.py</h2>
+        <p>Filename match; matched terms: auth, token, bearer, user. Functions: get_current_user.</p>
+      </section>
+      <section class="card">
+        <div class="label">Citation</div>
+        <h2>app/services/token_service.py</h2>
+        <p>Filename match; matched terms: token, user. Functions: decode_token.</p>
+      </section>
+    </div>
+    <section class="card">
+      <div class="label">Evidence snippet</div>
+      <pre>0001: from fastapi import Depends, HTTPException
+0002: from fastapi.security import HTTPBearer
+0003:
+0004: from app.services.token_service import decode_token
+0005:
+0006: security = HTTPBearer()
+0007:
+0008: def get_current_user(credentials = Depends(security)):
+0009:     token_data = decode_token(credentials.credentials)
+0010:     if not token_data:
+0011:         raise HTTPException(status_code=401, detail="Invalid token")</pre>
+    </section>
+  </main>
+</body>
+</html>

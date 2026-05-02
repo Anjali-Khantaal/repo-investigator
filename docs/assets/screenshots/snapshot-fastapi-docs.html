@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FastAPI docs snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7f9; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 40px; }
+    h1 { margin: 0 0 6px; font-size: 34px; }
+    .sub { color: #536273; margin-bottom: 24px; }
+    .endpoint { display: grid; grid-template-columns: 92px 1fr 180px; gap: 16px; align-items: center; background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 16px 18px; margin: 12px 0; }
+    .method { font-weight: 800; text-align: center; border-radius: 5px; padding: 8px; color: white; }
+    .get { background: #2563eb; }
+    .post { background: #16a34a; }
+    .path { font-family: "SFMono-Regular", Consolas, monospace; font-size: 17px; }
+    .why { color: #536273; }
+    .callout { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px 18px; margin-top: 22px; }
+    code { font-family: "SFMono-Regular", Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>FastAPI backend docs</h1>
+    <div class="sub">Open <code>http://localhost:8001/docs</code> to test the API without Streamlit.</div>
+    <section class="endpoint"><div class="method get">GET</div><div><div class="path">/health</div><div class="why">Check backend status, effective mode, warnings, and known repos.</div></div><div>First debugging stop</div></section>
+    <section class="endpoint"><div class="method get">GET</div><div><div class="path">/repos</div><div class="why">List repositories the app knows about from config and sample_repos.</div></div><div>Repo picker data</div></section>
+    <section class="endpoint"><div class="method post">POST</div><div><div class="path">/ask</div><div class="why">Submit a repo question and receive answer, citations, evidence, steps, warnings, and latency.</div></div><div>Main endpoint</div></section>
+    <section class="endpoint"><div class="method get">GET</div><div><div class="path">/runs/{run_id}</div><div class="why">Reload one saved answer from <code>data/runs</code>.</div></div><div>Run replay</div></section>
+    <section class="endpoint"><div class="method get">GET</div><div><div class="path">/recent</div><div class="why">List recent saved investigations.</div></div><div>History</div></section>
+    <div class="callout">Useful payload for <code>/ask</code>: question, repo_path, developer_mode.</div>
+  </main>
+</body>
+</html>

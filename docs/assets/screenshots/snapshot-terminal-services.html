@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Terminal services snapshot</title>
+  <style>
+    body { margin: 0; background: #0f172a; color: #e5e7eb; font-family: "SFMono-Regular", Consolas, monospace; }
+    .page { padding: 42px; }
+    h1 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 30px; margin: 0 0 24px; color: white; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .term { border: 1px solid #334155; border-radius: 8px; background: #111827; overflow: hidden; }
+    .title { background: #1f2937; padding: 12px 14px; color: #f9fafb; }
+    pre { margin: 0; padding: 16px; white-space: pre-wrap; line-height: 1.55; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Three-service local run</h1>
+    <div class="grid">
+      <section class="term"><div class="title">MLflow</div><pre>$ bash scripts/run_mlflow.sh
+Starting MLflow on http://localhost:5000
+Backend store: .mlflow/mlflow.db</pre></section>
+      <section class="term"><div class="title">FastAPI</div><pre>$ bash scripts/run_backend.sh
+Starting backend on http://localhost:8001
+Open API docs at /docs
+POST /ask 200 OK</pre></section>
+      <section class="term"><div class="title">Streamlit</div><pre>$ bash scripts/run_frontend.sh
+Starting Streamlit UI on http://localhost:8501
+Open browser at /</pre></section>
+    </div>
+  </main>
+</body>
+</html>

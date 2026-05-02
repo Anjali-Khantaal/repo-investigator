@@ -1,0 +1,3 @@
+{"question": "Where is authentication handled?", "repo_path": "sample_repos/demo_service", "expected_files": ["app/auth.py", "app/services/token_service.py"]}
+{"question": "Where is the FastAPI app created?", "repo_path": "sample_repos/demo_service", "expected_files": ["app/main.py"]}
+{"question": "Which file lists users?", "repo_path": "sample_repos/demo_service", "expected_files": ["app/routes/users.py"]}

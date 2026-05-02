@@ -1,0 +1,24 @@
+functions:
+  repo_investigator:
+    _type: repo_investigator
+    backend_url: http://localhost:8001
+    repo_path: sample_repos/demo_service
+    developer_mode: true
+    timeout_seconds: 120
+
+llms:
+  local_llm:
+    _type: openai
+    api_key: EMPTY
+    base_url: http://localhost:11434/v1
+    model_name: llama3.2:3b
+    temperature: 0.0
+
+workflow:
+  _type: react_agent
+  tool_names: [repo_investigator]
+  llm_name: local_llm
+  system_prompt: |
+    You are an orchestration layer for repository investigation.
+    When the user asks a question about the repository, prefer the repo_investigator tool.
+    Answer clearly and avoid inventing files that are not returned by the tool.

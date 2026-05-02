@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MLflow experiment snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f8fb; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 42px; }
+    h1 { margin: 0 0 20px; font-size: 30px; }
+    .toolbar { display: flex; gap: 12px; margin-bottom: 18px; }
+    .box { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 14px 18px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #d8dee7; border-radius: 8px; overflow: hidden; }
+    th, td { text-align: left; border-bottom: 1px solid #e5e7eb; padding: 14px 16px; font-size: 14px; }
+    th { background: #eef2f7; color: #374151; }
+    code { font-family: "SFMono-Regular", Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>MLflow experiment: repo-investigator</h1>
+    <div class="toolbar">
+      <div class="box">Tracking URI: <code>http://localhost:5000</code></div>
+      <div class="box">Experiment: <code>repo-investigator</code></div>
+      <div class="box">Recent runs</div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Run</th><th>Mode</th><th>Repo path</th><th>Metrics</th><th>Trace</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>c16ac7c...</code></td>
+          <td>dspy</td>
+          <td><code>sample_repos/demo_service</code></td>
+          <td><code>latency_ms</code>, <code>evidence_count</code></td>
+          <td><code>repo_investigator.ask</code></td>
+        </tr>
+        <tr>
+          <td><code>recent run</code></td>
+          <td>heuristic</td>
+          <td><code>sample_repos/demo_service</code></td>
+          <td><code>latency_ms</code>, <code>evidence_count</code></td>
+          <td><code>planner</code>, <code>search</code>, <code>evidence</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

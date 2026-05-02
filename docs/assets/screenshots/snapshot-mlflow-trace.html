@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MLflow trace snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f8fb; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 42px; }
+    h1 { margin: 0 0 22px; font-size: 30px; }
+    .bar { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 18px; margin-bottom: 18px; }
+    .timeline { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 22px; }
+    .span { display: grid; grid-template-columns: 210px 1fr 120px; gap: 14px; align-items: center; margin: 14px 0; }
+    .track { height: 22px; border-radius: 5px; background: #dbeafe; border: 1px solid #93c5fd; }
+    .track.short { width: 38%; }
+    .track.med { width: 62%; }
+    .track.long { width: 88%; }
+    code { font-family: "SFMono-Regular", Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>MLflow trace detail</h1>
+    <section class="bar">
+      Experiment: <code>repo-investigator</code> · Tags: <code>repo_path</code>, <code>mode</code>, <code>run_id</code> · Metrics: <code>latency_ms</code>, <code>evidence_count</code>
+    </section>
+    <section class="timeline">
+      <div class="span"><strong>repo_investigator.ask</strong><div class="track long"></div><code>full run</code></div>
+      <div class="span"><strong>planner</strong><div class="track short"></div><code>keywords</code></div>
+      <div class="span"><strong>answerer</strong><div class="track med"></div><code>LLM answer</code></div>
+      <div class="span"><strong>critic</strong><div class="track short"></div><code>grounding</code></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>repo-investigator developer panel snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f6f7f9; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 42px; }
+    h1 { font-size: 30px; margin: 0 0 24px; }
+    .step { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 18px 20px; margin-bottom: 14px; }
+    .stage { font-weight: 700; font-size: 20px; margin-bottom: 6px; }
+    .summary { color: #3d4b5c; margin-bottom: 12px; }
+    pre { background: #111827; color: #f9fafb; padding: 14px; border-radius: 6px; overflow: hidden; font-size: 13px; line-height: 1.45; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Developer panel: one investigation run</h1>
+    <section class="step">
+      <div class="stage">repo_map</div>
+      <div class="summary">Built repository map</div>
+      <pre>{"total_lines": 9}</pre>
+    </section>
+    <section class="step">
+      <div class="stage">planner</div>
+      <div class="summary">Planned repository search</div>
+      <pre>{"keywords": ["authentication", "auth", "token", "bearer"], "file_hints": "app/auth.py, app/services/token_service.py"}</pre>
+    </section>
+    <section class="step">
+      <div class="stage">search</div>
+      <div class="summary">Ranked candidate files</div>
+      <pre>{"candidates": ["app/auth.py", "app/services/token_service.py", "app/routes/users.py"]}</pre>
+    </section>
+    <section class="step">
+      <div class="stage">evidence</div>
+      <div class="summary">Extracted evidence snippets</div>
+      <pre>{"evidence_files": ["app/auth.py", "app/services/token_service.py"]}</pre>
+    </section>
+    <section class="step">
+      <div class="stage">answer</div>
+      <div class="summary">Generated DSPy answer</div>
+      <pre>{"cited_files": ["app/auth.py", "app/services/token_service.py"], "confidence": "Grounded in matched files."}</pre>
+    </section>
+  </main>
+</body>
+</html>

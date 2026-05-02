@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MLflow home snapshot</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f8fb; color: #17202a; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 40px; }
+    h1 { margin: 0 0 8px; font-size: 34px; }
+    .sub { color: #536273; margin-bottom: 24px; }
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
+    .card { background: white; border: 1px solid #d8dee7; border-radius: 8px; padding: 20px; }
+    .experiment { border: 1px solid #cdd5df; border-radius: 6px; padding: 12px; margin-top: 12px; background: #f9fafb; font-family: "SFMono-Regular", Consolas, monospace; }
+    .row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; border-bottom: 1px solid #e5e7eb; padding: 14px 0; }
+    .row:last-child { border-bottom: 0; }
+    code { font-family: "SFMono-Regular", Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>MLflow tracing UI</h1>
+    <div class="sub">Open <code>http://localhost:5000</code>, then select the <code>repo-investigator</code> experiment.</div>
+    <div class="layout">
+      <aside class="card">
+        <strong>Experiments</strong>
+        <div class="experiment">repo-investigator</div>
+        <div class="experiment">Default</div>
+      </aside>
+      <section class="card">
+        <div class="row"><strong>What to open</strong><div>The newest run or trace after asking a question.</div></div>
+        <div class="row"><strong>Tags</strong><div><code>repo_path</code>, <code>mode</code>, <code>repo_investigator_run_id</code></div></div>
+        <div class="row"><strong>Spans</strong><div><code>repo_investigator.ask</code>, <code>planner</code>, <code>answerer</code>, <code>critic</code></div></div>
+        <div class="row"><strong>Metrics</strong><div><code>latency_ms</code> and <code>evidence_count</code></div></div>
+        <div class="row"><strong>Use it for</strong><div>Debugging why a file was selected, whether DSPy ran, and how long each run took.</div></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
